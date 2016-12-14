@@ -1,36 +1,36 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-// import App from './App'
+import App from './App'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 // 1. 定义（路由）组件。
 // 可以从其他文件 import 进来
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
-import User from './components/User.vue'
-import EditForm from './components/EditForm.vue'
+// const Foo = { template: '<div>foo</div>' }
+// const Bar = { template: '<div>bar</div>' }
+// import User from './components/User.vue'
+// import EditForm from './components/EditForm.vue'
 // const User = {
 //   template: '<div>User {{ $route.params.id }}</div>'
 // }
 // 动态路径参数 以冒号开头
-const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar },
-  { path: '/user/:id', component: User },
-  { path: '/form', component: EditForm }
-]
-const router = new VueRouter({
-  routes
-})
-new Vue({
-  data: {
-    formData: {
-      name: 'test'
-    }
-  },
-  router
-}).$mount('#app')
+// const routes = [
+//   { path: '/foo', component: Foo },
+//   { path: '/bar', component: Bar },
+//   { path: '/user/:id', component: User },
+//   { path: '/form', component: EditForm }
+// ]
+// const router = new VueRouter({
+//   routes
+// })
+// new Vue({
+//   data: {
+//     formData: {
+//       name: 'test'
+//     }
+//   },
+//   router
+// }).$mount('#app')
 // （缩写）相当于 routes: routes
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
@@ -43,11 +43,14 @@ new Vue({
 // 记得要通过 router 配置参数注入路由，
 // 从而让整个应用都有路由功能
 /* eslint-disable no-new */
-// new Vue({
-//   el: '#app',
-//   router,
-//   render (h) {
-//     // return <App/>
-//     return h(App)
-//   }
-// })
+new Vue({
+  el: '#app',
+  render (h) {
+    // return <App/>
+    return h(App)
+  }
+})
+// const  List = Vue.extend(list)
+// const instance = new List()
+// list.moute('#list')
+
