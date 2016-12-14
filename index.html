@@ -16,10 +16,13 @@
         <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
         <router-link to="/foo">Go to Foo</router-link>
         <router-link to="/bar">Go to Bar</router-link>
+        <router-link to="/form">Go to Form</router-link>
+        <h1> 测试 : {{formData.name}}</h1>
       </p>
       <!-- 路由出口 -->
       <!-- 路由匹配到的组件将渲染在这里 -->
-      <router-view></router-view>
+      <router-view keep-alive></router-view>
+     
     </div>
   </body>
 </html>
