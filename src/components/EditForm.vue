@@ -34,12 +34,16 @@
       },
       methods: {
         handleClick () {
+          var obj = {name: 'test123', add: 'henan', dept: 'javascript'}
+          var {name, ...other} = obj
+          console.info('name : ' + name)
+          console.info('other : ', other)
           var c1 = instanceTmp()
           var c2 = instanceTmp()
           console.info('c1 === c2 : ' + (c1 === c2))
           console.info('显隐子表信息!')
           instanceTmp().$mount('#test')// $mount('#app')
-          //new List().$mount('#test')//这样会new很多的table196实例出来
+          // new List().$mount('#test')//这样会new很多的table196实例出来
         }
       }
     }
