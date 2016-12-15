@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
+import Vuex from 'vuex'
+Vue.use(Vuex)
 // 1. 定义（路由）组件。
 // 可以从其他文件 import 进来
 // const Foo = { template: '<div>foo</div>' }
