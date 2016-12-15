@@ -6,6 +6,7 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+//var HappyPack = require('happypack')
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : config.build.env
@@ -31,6 +32,14 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': env
     }),
+    // new HappyPack({
+    //   // loaders is the only required parameter:
+    //   id: 'js',
+    //   loaders: [ 'babel' ],
+    //   threads: 4,
+    //   cache:true
+    //   // customize as needed, see Configuration below
+    // }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
