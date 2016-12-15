@@ -7,11 +7,11 @@
     </div>
 </template>
 <script>
-    export default{
-      data () {
-        return {
-          name: ''
-        }
+  export default{
+    data () {
+      return {
+        name: ''
       }
     }
+  }
 </script>
