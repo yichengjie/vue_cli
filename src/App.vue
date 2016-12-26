@@ -1,17 +1,14 @@
 <template>
     <div>
-        <EditFrom/>
+        <Hello/>
     </div>
 </template>
 <script>
-  import EditFrom from './components/EditForm.vue'
+  import Hello from './components/Hello.vue'
   export default{
     name: 'App',
-    data () {
-      return {}
-    },
     components: {
-      EditFrom
+      Hello
     }
   }
 </script>
