@@ -1,5 +1,7 @@
 import Vue from 'vue'
-import App from './App'
+import App from './views/query/App.vue'
+require('bootstrap/dist/css/bootstrap.css') ;
+require('bootstrap/dist/js/bootstrap.js') ;
 new Vue({
   el: '#app',
   render (h) {
