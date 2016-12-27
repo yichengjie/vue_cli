@@ -76,5 +76,6 @@
 <style>
   #app .navbar{
     border-radius: 0px;
+    margin-bottom: 0px ;
   }
 </style>

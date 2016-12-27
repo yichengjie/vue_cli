@@ -16,7 +16,6 @@
 </script>
 <style>
   .main-content{
-    margin: 0px 5px;
-    margin-right: 2px;
+    margin: 0px;
   }
 </style>
