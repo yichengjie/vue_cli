@@ -5,7 +5,7 @@ require('bootstrap/dist/js/bootstrap.js') ;
 new Vue({
   el: '#app',
   render (h) {
-    return h(App) ;
+    return <App/> ;
   }
 })
 
