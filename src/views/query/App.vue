@@ -1,7 +1,7 @@
 <template>
     <div id ="app">
-        <Navbar/>
-        <MainContent/>
+        <Navbar />
+        <MainContent />
     </div>
 </template>
 <script>
