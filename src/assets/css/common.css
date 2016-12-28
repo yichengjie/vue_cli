@@ -32,8 +32,12 @@ body{
     background:#fff url(../images/tui_div4_bg.png) repeat-x left bottom;
     border-bottom:1px solid #9ea7ab;
     box-shadow:0 0 2px 0;
+    font-size: 12px;
     font-weight: 100;
     box-sizing: border-box;
+}
+.query_section label{
+  font-weight: 100;
 }
 .query_title{
     margin: 0 10px;
@@ -419,9 +423,6 @@ td input[type=text],td select{
 /**common relevant end*/
 
 /**head relevant start*/
-.query_row .title{
-    font-weight: 700;
-}
 .query_row .glyphicon-calendar{
     opacity:0.7;
 }
