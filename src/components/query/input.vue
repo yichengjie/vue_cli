@@ -1,40 +1,39 @@
 <template>
   <span>
-    <label  class="marginR5 title">SUBCODE</label>
-    <input type="text" name="subcode" class="common_input"  style="width:150px;" placeholder="多个用/分割" />
+    <label  class="marginR5 title" v-if="label">{{label}}</label>
+    <input type="text"
+      name="subcode"
+      class="common_input"
+      :style="inputStyleObj"
+      :value="value"
+      @input="handleInputOper"
+      :placeholder="placeholder" />
   </span>
 </template>
 <script>
   export default {
     props:{
-       label:{
+       label:String,
+       name:String,
+       placeholder:String,
+       width:{
          type:String,
-         default:' '
+         default:"120px"
        },
-       inputType:{
-         type:String,
-         default:'text'
-       },
-       options:Array
+       value:[String,Number]
     },
-    render(createElement) {
-
-
-      var labelElemArr = [] ;
-      for(let item of this.options){
-         let labelElem = createElement('label',createElement('input',{
-           attrs:{
-            type:'text'
-           }
-         })) ;
+    data () {
+      return {
+        inputStyleObj:{
+          width:this.width
+        }
+      } ;
+    },
+    methods:{
+      handleInputOper(event) {
+        let value = event.target.value ;
+        this.$emit('input',value) ;
       }
-
-      createElement('span',[
-
-      ]) ;
     }
-
   } ;
-
-
 </script>

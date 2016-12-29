@@ -1,25 +1,22 @@
 <template>
   <div class ="query_section">
-    <div class="query_row">
-        <span class="query_title">基础信息</span>
-        <Checkbox name ="status1" v-model="formData.status1" :options ="options.status1" />
-
-        <label  class="marginR5 title">SUBCODE</label>
-        <input type="text" name="subcode" class="common_input"  style="width:150px;" placeholder="多个用/分割" />
-
-        <label  class="marginR5 title">优先级序号</label>
-        <input type="text" name ="startSequenceNumber" class="common_input"  style="width:80px;" />
-        <span class="marginRL2">—</span>
-        <input type="text" name ="endSequenceNumber" class="common_input"  style="width:80px;"/>
+    <QueryRowLayout title="基础信息">
+        <OCCheckbox name ="status1" v-model="formData.status1" :options ="options.status1" />
+        <OCInput label="SUBCODE" v-model ="formData.subcode1" width="150px" placeholder="多个用/分割"/>&nbsp;—
+        <OCInput v-model ="formData.subcode2" width="150px" placeholder="多个用/分割"/>
+        <OCInput label="优先级序号" v-model ="formData.seqNum1" width="80px" />&nbsp;—
+        <OCInput v-model ="formData.seqNum2" width="80px" />
         <span class="pull-right marginR15">
-            <button type="button" class="btn btn-sm btn-primary" >查询</button>
+            <button type="button" class="btn btn-sm btn-primary" @click ="handleQueryOper">查询</button>
         </span>
-    </div>
+    </QueryRowLayout>
   </div>
 </template>
 <script>
-  import QueryCondationItem from 'components/QueryCondationItem.vue' ;
-  import Checkbox from 'components/query/checkbox.vue' ;
+  import QueryRowLayout from 'components/QueryRowLayout.vue' ;
+  import OCCheckbox from 'components/query/checkbox.vue' ;
+  import OCInput from 'components/query/input.vue' ;
+
   export default {
     props:{
       lineElemCount:{//一行放几个元素
@@ -33,19 +30,29 @@
       }
     },
     components:{
-      QueryCondationItem,
-      Checkbox
+      QueryRowLayout,
+      OCCheckbox,
+      OCInput
     },
     data() {
       return {
         formData:{
-          status1:["1"]
+          status1:[],
+          subcode1:'',
+          subcode1:'',
+          seqNum1:'',
+          seqNum2:''
         },
         options:{
           classes:[{name:'101班',value:'101'},{name:'102班',value:'102'},{name:'103班',value:'103'}],
           status1:[{name:'未发布',value:'1'},{name:'已发布',value:"2"}]
         }
       } ;
+    },
+    methods:{
+      handleQueryOper () {
+        console.info('formData : ' ,JSON.stringify(this.formData)) ;
+      }
     }
   };
 </script>
