@@ -18,21 +18,13 @@
   import OCInput from 'components/query/input.vue' ;
 
   export default {
-    props:{
-      lineElemCount:{//一行放几个元素
-        type:Number,
-        default:3
-      }
-    },
-    computed:{
-      oneElemColNum () {
-        return 12 / this.lineElemCount ;
-      }
-    },
     components:{
       QueryRowLayout,
       OCCheckbox,
       OCInput
+    },
+    props:{
+      queryDB:Function
     },
     data() {
       return {
@@ -52,6 +44,7 @@
     methods:{
       handleQueryOper () {
         console.info('formData : ' ,JSON.stringify(this.formData)) ;
+        this.queryDB(this.formData) ;
       }
     }
   };

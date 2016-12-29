@@ -1,5 +1,5 @@
 <template>
-  <div class="query-list">
+  <div class="query-list" v-if="list.length>0">
       <table class="table table-bordered">
           <thead>
             <tr>
@@ -18,16 +18,11 @@
 <script>
   import QueryListItem from './QueryListItem.vue' ;
   export default {
+    props:{
+      list:Array
+    },
     components:{
       QueryListItem
-    },
-    data () {
-      return {
-        list:[
-          {id:'001',name:'ocName01',classes:'101',dept:'js'},
-          {id:'001',name:'ocName02',classes:'101',dept:'js'},
-          {id:'001',name:'ocName03',classes:'101',dept:'js'}]
-      } ;
     }
   } ;
 </script>
