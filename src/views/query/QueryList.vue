@@ -13,16 +13,19 @@
             <td>{{item.dept}}</td>
           </tr>
       </TableLayout>
+      <Pagebar />
   </div>
 </template>
 <script>
   import TableLayout from 'components/TableLayout.vue' ;
+  import Pagebar from 'components/Pagebar.vue' ;
   export default {
     props:{
       list:Array
     },
     components:{
-      TableLayout
+      TableLayout,
+      Pagebar
     },
     data () {
       return {
