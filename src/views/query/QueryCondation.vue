@@ -16,7 +16,6 @@
   import QueryRowLayout from 'components/QueryRowLayout.vue' ;
   import OCCheckbox from 'components/query/checkbox.vue' ;
   import OCInput from 'components/query/input.vue' ;
-
   export default {
     components:{
       QueryRowLayout,
@@ -24,17 +23,11 @@
       OCInput
     },
     props:{
-      queryDB:Function
+      queryDB:Function,
+      formData:Object
     },
     data() {
       return {
-        formData:{
-          status1:[],
-          subcode1:'',
-          subcode1:'',
-          seqNum1:'',
-          seqNum2:''
-        },
         options:{
           classes:[{name:'101班',value:'101'},{name:'102班',value:'102'},{name:'103班',value:'103'}],
           status1:[{name:'未发布',value:'1'},{name:'已发布',value:"2"}]
@@ -43,8 +36,7 @@
     },
     methods:{
       handleQueryOper () {
-        console.info('formData : ' ,JSON.stringify(this.formData)) ;
-        this.queryDB(this.formData) ;
+        this.queryDB() ;
       }
     }
   };

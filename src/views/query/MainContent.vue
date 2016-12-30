@@ -1,6 +1,6 @@
 <template>
   <div class="main-content">
-      <QueryCondation :queryDB="queryDB" />
+      <QueryCondation :queryDB="queryDB" :formData="formData" />
       <QueryList :pageBean="pageBean" :queryDB = "queryDB"/>
   </div>
 </template>
@@ -8,7 +8,7 @@
   import QueryCondation from './QueryCondation.vue' ;
   import QueryList from './QueryList.vue' ;
   import util from 'common/util.js' ;
-  import queryDBApi from './api.js' ;
+  import {queryDBApi} from './api.js' ;
   let defaultPageSize = 10 ;
   export default {
     components:{
@@ -16,12 +16,11 @@
        QueryList
     },
     methods:{
-      queryDB(formData){/**当点击查询按钮后，查询数据库操作*/
-        console.info('准备去查询数据库....' , JSON.stringify(formData)) ;
+      queryDB(){/**当点击查询按钮后，查询数据库操作*/
         util.showLoading() ;
         //清空页面上一次查询的数据
         this.pageBean.list.splice(0,this.pageBean.list.length) ;
-        let queryParam = {...this.pageBean.pagebar} ;
+        let queryParam = {...this.pageBean.pagebar,...this.formData} ;
         let promise = queryDBApi(queryParam) ;
         promise.then((retData) => {
           util.hideLoading() ;
@@ -32,6 +31,13 @@
     },
     data () {
       return {
+        formData:{
+          status1:[],
+          subcode1:'',
+          subcode1:'',
+          seqNum1:'',
+          seqNum2:''
+        },
         pageBean:{
           list:[],
           pagebar:{

@@ -1,6 +1,7 @@
 import util from 'common/util.js' ;
 //查询数据库
 export function queryDBApi (queryParam) {
+  console.info('queryParam : ' + JSON.stringify(queryParam)) ;
   //这一部分是通过数据库查询过来的数据
   let recordList =[
       {id:'001',name:'ocName01',classes:'101',dept:'js'},
