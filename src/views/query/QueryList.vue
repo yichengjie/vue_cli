@@ -1,7 +1,7 @@
 <template>
-  <div class="query-list" v-if="list.length>0">
-      <TableLayout :titleArr="titleArr" v-model ="checkboxAll" :list ="list">
-          <tr v-for="item in list">
+  <div class="query-list" v-if="pageBean.list.length>0">
+      <TableLayout :titleArr="titleArr" v-model ="checkboxAll" :list ="pageBean.list">
+          <tr v-for="item in pageBean.list">
             <td>
               <input type="checkbox"
                   name="checkboxItem"
@@ -13,7 +13,7 @@
             <td>{{item.dept}}</td>
           </tr>
       </TableLayout>
-      <Pagebar />
+      <Pagebar :pageBean="pageBean" :queryDB="queryDB" />
   </div>
 </template>
 <script>
@@ -21,7 +21,8 @@
   import Pagebar from 'components/Pagebar.vue' ;
   export default {
     props:{
-      list:Array
+      pageBean:Object,
+      queryDB:Function
     },
     components:{
       TableLayout,
@@ -38,7 +39,7 @@
         let flag = event.target.checked ;
         item.checked = flag ;
         //查询没有选中的index
-        let index = this.list.findIndex(item => item.checked !== true ) ;
+        let index = this.pageBean.list.findIndex(item => item.checked !== true ) ;
         this.checkboxAll = (index === -1) ;//如果为-1不存在没有选中的
       }
     }
