@@ -1,7 +1,7 @@
 <template>
   <div class="main-content">
     <QueryCondation :formData="formData"/>
-    <EditForm :formData="formData"/>
+    <EditForm :formData="formData" :options="options"/>
   </div>
 </template>
 <script>
@@ -16,7 +16,11 @@
       return {
         formData:{
           name:'',
-          addr:''
+          addr:'',
+          dayofweek:[]
+        },
+        options:{
+          dayofweek:[{name:'周一',value:'1'},{name:'周二',value:'2'},{name:'周三',value:'3'},{name:'周四',value:'4'},{name:'周五',value:'5'}]
         }
       } ;
     }

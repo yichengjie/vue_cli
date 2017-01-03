@@ -1,6 +1,6 @@
 <template>
 <span>
-  <label v-for ="item in options">
+  <label v-for ="item in options" class="checkbox-inline">
       <input type="checkbox"
         :name="name"
         :checked="isChecked(item.value)"
@@ -37,4 +37,9 @@
     }
   } ;
 </script>
-
+<style>
+ .form-group checkbox-inline{
+    font-size: 10px;
+    font-weight: 100 ;
+  }
+</style>
