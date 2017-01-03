@@ -342,8 +342,9 @@ td input[type=text],td select{
     padding-top: 7px;
 }
 
+/**原始的form-group每一个form item间隔较大*/
 .form-horizontal .form-group{
-    margin-bottom: 5px;
+    /*margin-bottom: 5px;*/
 }
 .form-horizontal .control_right_content{
     padding-top: 7px;

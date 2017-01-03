@@ -9,6 +9,12 @@
      <OCFormItem label="星期">
         <OCCheckbox :options ="options.dayofweek" v-model ="formData.dayofweek"/>
      </OCFormItem>
+     <OCFormItem label ="系别">
+        <OCRadio :options ="options.dept" v-model ="formData.dept" />
+     </OCFormItem>
+     <OCFormItem label ="班级">
+        <OCSelect :options ="options.classes" v-model ="formData.classes"/>
+     </OCFormItem>
   </OCForm>
 </template>
 <script>
@@ -16,6 +22,8 @@
   import OCFormItem from 'components/edit/form-item.vue' ;
   import OCInput from 'components/edit/input.vue' ;
   import OCCheckbox from 'components/edit/checkbox.vue' ;
+  import OCRadio  from 'components/edit/radio.vue' ;
+  import OCSelect from 'components/edit/select.vue' ;
   export default {
     props:{
       formData:Object,
@@ -25,7 +33,9 @@
       OCForm,
       OCFormItem,
       OCInput,
-      OCCheckbox
+      OCCheckbox,
+      OCRadio,
+      OCSelect
     }
   } ;
 </script>
