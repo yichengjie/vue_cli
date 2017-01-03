@@ -12,6 +12,9 @@
      <OCFormItem label ="系别">
         <OCRadio :options ="options.dept" v-model ="formData.dept" />
      </OCFormItem>
+    <OCFormItem label ="系别">
+        <OCRadio :options ="options.dept" v-model ="formData.dept" />
+     </OCFormItem>
      <OCFormItem label ="班级">
         <OCSelect :options ="options.classes" v-model ="formData.classes"/>
      </OCFormItem>

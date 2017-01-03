@@ -19,7 +19,8 @@
           addr:'',
           dayofweek:[],
           dept:'',
-          classes:''
+          classes:'',
+          classes2:''
         },
         options:{
           dayofweek:[{name:'周一',value:'1'},{name:'周二',value:'2'},{name:'周三',value:'3'},{name:'周四',value:'4'},{name:'周五',value:'5'}],
