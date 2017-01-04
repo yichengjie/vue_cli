@@ -1,7 +1,11 @@
 <template>
   <div class="main-content">
-    <TodoList :list="list" :clickTr="clickTr"/>
-    <TodoEdit :formData="formData" :newAddUser="newAddUser" :updateUser="updateUser" />
+    <TodoList
+      :list="list"
+      :clickTr="clickTr"/>
+    <TodoEdit :formData="formData"
+      :newAddUser="newAddUser"
+      :updateUser="updateUser" />
   </div>
 </template>
 <script>
