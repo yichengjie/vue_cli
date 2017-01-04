@@ -16,6 +16,7 @@
   import QueryRowLayout from 'components/QueryRowLayout.vue' ;
   import OCCheckbox from 'components/query/checkbox.vue' ;
   import OCInput from 'components/query/input.vue' ;
+  import Vue from 'vue' ;
   export default {
     components:{
       QueryRowLayout,
@@ -37,6 +38,14 @@
     methods:{
       handleQueryOper () {
         this.queryDB() ;
+        console.info(this.$parent) ;
+        //.$emit('test','msg is hello world') ;
+
+        var t = $('#myList')[0].textContent ;
+        console.info('t : ' + t) ;
+        // Vue.nextTick( () => {
+        //   this.$el.textContent === 'new message' // true
+        // }) ;
       }
     }
   };

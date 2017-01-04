@@ -11,6 +11,7 @@
   import {queryDBApi} from './api.js' ;
   let defaultPageSize = 10 ;
   export default {
+    name:'MainContent',
     components:{
        QueryCondation,
        QueryList
@@ -50,6 +51,12 @@
           }
         }
       } ;
+    },
+    mounted(){
+      console.info('hello world ... ') ;
+      this.$on('test',function(msg){
+        console.info('test ... ' + msg) ;
+      }) ;
     }
   };
 </script>
