@@ -26,7 +26,7 @@
         </div>
         <div class="form-group">
           <div class="col-sm-offset-4 col-sm-8">
-            <button type="button" class="btn btn-default" @click ="handleSaveOper">保存</button>
+            <button type="button" class="btn btn-default" @click ="handleSaveOper">{{btnTitle}}</button>
           </div>
         </div>
       </form>
@@ -41,11 +41,12 @@
     },
     computed:{
       pageTitle(){
-        if(this.formData.id&&this.formData.id.length>0){
-          return "修改用户信息" ;
-        }else{
-          return "新增用户信息" ;
-        }
+        let updateFlag = _isUpdatePage(this.formData) ;
+        return updateFlag ? "修改用户信息" : "新增用户信息" ;
+      },
+      btnTitle() {
+         let updateFlag = _isUpdatePage(this.formData) ;
+         return updateFlag ? "更新" : "新增" ;
       }
     },
     methods:{
@@ -66,4 +67,12 @@
       }
     }
   } ;
+
+  function _isUpdatePage(formData){
+    if(formData.id&&formData.id.length>0){
+      return true ;
+    }else{
+      return false ;
+    }
+  }
 </script>
